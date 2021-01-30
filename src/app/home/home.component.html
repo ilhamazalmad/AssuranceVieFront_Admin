@@ -1,20 +1,37 @@
-<div class="content" style="background-color: white;">
-    <h1></h1>
-    <nav class="navbar">
-        <input class="form-control" type="text" name="cin" [(ngModel)]="cin" (ngModelChange)="chercher()"
-        placeholder="CIN">
-        <input class="form-control" type="text" name="Etat de contrat" [(ngModel)]="etat" (ngModelChange)="chercher()"
-        placeholder="Etat de contrat">
+<div class="content" >
+    <h1 style="background-color: white;"> Liste des inscriptions des assurances de vie des produits financiers</h1>
+    <div style="background-color: white;">
+        <nav class="navbar" style="background-color: white;">
+        <div style="text-align: right;" >
+            <div><label>CIN</label></div>
+            <div><label>Distributeur</label></div>
+
+        </div>
+        <div style="text-align: left;" >
+            <input class="form-control" type="text" name="cin" [(ngModel)]="cin" (ngModelChange)="chercher(1)"
+            placeholder="CIN_">
+            <input class="form-control" type="text" name="distr" [(ngModel)]="distr" (ngModelChange)="chercher(2)"
+            placeholder="Distributeur_" >
+        </div>
+        <div style="text-align: right;" >
+            <div><label >Etat de contrat</label></div>
+            <div><label>Prix</label></div>
+        </div>
+        <div style="text-align: left;" >
+            <input class="form-control" type="text" name="Etat de contrat" [(ngModel)]="etat" (ngModelChange)="chercher(3)"
+            placeholder="Etat de contrat_">
+            <input class="form-control" type="text" name="prix" [(ngModel)]="prix" (ngModelChange)="chercher(4)"
+            placeholder="Prix_">
+        </div>
     </nav>
-    <table class="table table-bordered">
+    <table class="table table-bordered" >
         <thead>
             <tr>
                 <th>Contrat</th>
                 <th>Prix</th>
                 <th>Cin</th>
                 <th>Nom et Prénom</th>
-                <th>Téléphone</th>
-                <th>Adresse</th>
+                <th>Distributeur</th>
                 <th>Formule</th>
                 <th>Etat de contrat</th>
                 <th>Actions</th>
@@ -26,13 +43,12 @@
                 <td>{{iAVPF.prix}}</td>
                 <td>{{iAVPF.iAV.client.cin}}</td>
                 <td>{{iAVPF.iAV.client.nom+" "+ iAVPF.iAV.client.prenom}}</td>
-                <td>{{iAVPF.iAV.client.telephone}}</td>
-                <td>{{iAVPF.iAV.client.adresse}}</td>
+                <td>{{iAVPF.distributeur.libelle}}</td>
                 <td>{{iAVPF.formule.libelle}}</td>
                 <td>{{iAVPF.etatInscription.libelle}}</td>
                 <td>
-                    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="detail(iAVPF.id)" >
-                        Plus de détail
+                    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="delete(iAVPF.id)" >
+                        Supprimer le contrat
                     </button>
                     <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="report(iAVPF.id)">
                         Télécharger l'acte d'engagement 
@@ -41,4 +57,5 @@
             </tr>
         </tbody>
     </table>
+    </div>
 </div>

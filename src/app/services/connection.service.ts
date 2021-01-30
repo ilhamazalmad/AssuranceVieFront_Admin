@@ -43,5 +43,14 @@ export class ConnectionService {
   public generateReport(id :String):Observable<any>{
     return this._http.get("http://localhost:8090/assurance-api/IAVPF/report/IDP/"+id);
   }
+  public deleteDistributeur(id :String):Observable<any>{
+    return this._http.delete("http://localhost:8090/assurance-api/Distributeur/delete/id/"+id);
+  }
+  public deleteClient(id :String):Observable<any>{
+    return this._http.delete("http://localhost:8090/assurance-api/Client/delete/"+id);
+  }
+  public deleteIAVPF(id :String):Observable<any>{
+    return this._http.delete("http://localhost:8090/assurance-api/IAVPF/delete/id/"+id);
+  }
 
 }

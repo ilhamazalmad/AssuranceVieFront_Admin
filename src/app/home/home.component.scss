@@ -55,5 +55,17 @@
   }
   .form-control{
     width: 200px;
-    font-size: large;
+    font-size: medium;
   }
+  h1{
+    position: relative;
+    z-index: 2;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px #591630,
+                 2px 2px  #E14282,
+                 3px 3px  rgba(0,0,0,.7);
+    padding: 30px;
+  }
+  

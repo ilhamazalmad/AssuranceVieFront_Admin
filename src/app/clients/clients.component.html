@@ -1,0 +1,56 @@
+<div class="content" >
+    <h1 style="background-color: white;"> Liste des Clients</h1>
+    <div style="background-color: white;">
+        <nav class="navbar" style="background-color: white;">
+        <div style="text-align: right;" >
+            <div><label>Nom</label></div>
+            <div><label>Prenom</label></div>
+
+        </div>
+        <div style="text-align: left;" >
+            <input class="form-control" type="text" name="nom" [(ngModel)]="nom" (ngModelChange)="chercher(1) " 
+            placeholder="nom_">
+            <input class="form-control" type="text" name="prenom" [(ngModel)]="prenom" (ngModelChange)="chercher(2)" 
+            placeholder="Prenom_" >
+        </div>
+        <div style="text-align: right;" >
+            <div><label >CIN</label></div>
+            <div><label>Telephone</label></div>
+        </div>
+        <div style="text-align: left;" >
+            <input class="form-control" type="text" name="cin" [(ngModel)]="cin" (ngModelChange)="chercher(3)" 
+            placeholder="CIN_">
+            <input class="form-control" type="text" name="telephone" [(ngModel)]="telephone" (ngModelChange)="chercher(4)" 
+            placeholder="Telephone_">
+        </div>
+    </nav>
+    <table class="table table-bordered" >
+        <thead>
+            <tr>
+                <th>CIN</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
+                <th>Telephone</th>
+                <th>DateNaissance</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let client of clients">
+                <td>{{client.cin}}</td>
+                <td>{{client.nom}}</td>
+                <td>{{client.prenom}}</td>
+                <td>{{client.adresse}}</td>
+                <td>{{client.telephone}}</td>
+                <td>{{client.dateNaissance}}</td>
+                <td>
+                    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="delete(client.id)" >
+                        Supprimer le Client
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

@@ -16,12 +16,14 @@ export class LoginComponent implements OnInit {
               private _activatedRoute:ActivatedRoute){}
     
   connecter(){
-          if(this.user != null && this.pwd != null)
+          if(this.user == "admin" && this.pwd == "admin")
           {
             alert("Connexion réussite :")
             localStorage.setItem("session","true");
             (document.getElementById('login') as HTMLElement).textContent="Deconnexion";
             (document.getElementById('profil') as HTMLElement).hidden=false;
+            (document.getElementById('clients') as HTMLElement).hidden=false;
+            (document.getElementById('distributeurs') as HTMLElement).hidden=false;
             (document.getElementById('profil') as HTMLElement).textContent="Administrateur";
             this._router.navigate(['/'])
           }
