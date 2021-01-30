@@ -28,12 +28,11 @@ export class ClientsComponent implements OnInit {
   }
 
   chercher(val : any){
-    if(this.nom == "" && this.prenom == "" && this.cin == "" && this.telephone == "" 
-      && this.nom != null && this.prenom != null && this.cin != null && this.telephone != null ){
+    if(this.nom == "" && this.prenom == "" && this.cin == "" && this.telephone == ""){
       this.ngOnInit()
     }
     else {
-      if (this.nom != "" && this.nom != null){
+      if (this.nom != ""){
         this.clients=this.clients.filter(
           res=>{
             return res.nom.toLocaleLowerCase().match(this.nom.toLocaleLowerCase());
@@ -44,7 +43,7 @@ export class ClientsComponent implements OnInit {
         this.ngOnInit()
         this.chercher(0)
       }
-      if (this.prenom != "" && this.prenom != null){
+      if (this.prenom != ""){
         this.clients=this.clients.filter(
           res=>{
             return res.prenom.toLocaleLowerCase().match(this.prenom.toLocaleLowerCase());
@@ -55,7 +54,7 @@ export class ClientsComponent implements OnInit {
         this.ngOnInit()
         this.chercher(0)
       }
-      if (this.cin != "" && this.cin != null){
+      if (this.cin != "" ){
         this.clients=this.clients.filter(
           res=>{
             return res.cin.toLocaleLowerCase().match(this.cin.toLocaleLowerCase());
@@ -66,7 +65,7 @@ export class ClientsComponent implements OnInit {
         this.ngOnInit()
         this.chercher(0)
       }
-      if (this.telephone != "" && this.telephone != null){
+      if (this.telephone != "" ){
         this.clients=this.clients.filter(
           res=>{
             return res.telephone.toLocaleLowerCase().match(this.telephone.toLocaleLowerCase());
