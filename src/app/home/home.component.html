@@ -1,0 +1,44 @@
+<div class="content" style="background-color: white;">
+    <h1></h1>
+    <nav class="navbar">
+        <input class="form-control" type="text" name="cin" [(ngModel)]="cin" (ngModelChange)="chercher()"
+        placeholder="CIN">
+        <input class="form-control" type="text" name="Etat de contrat" [(ngModel)]="etat" (ngModelChange)="chercher()"
+        placeholder="Etat de contrat">
+    </nav>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Contrat</th>
+                <th>Prix</th>
+                <th>Cin</th>
+                <th>Nom et Prénom</th>
+                <th>Téléphone</th>
+                <th>Adresse</th>
+                <th>Formule</th>
+                <th>Etat de contrat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let iAVPF of iAVPFs">
+                <td>{{iAVPF.id}}</td>
+                <td>{{iAVPF.prix}}</td>
+                <td>{{iAVPF.iAV.client.cin}}</td>
+                <td>{{iAVPF.iAV.client.nom+" "+ iAVPF.iAV.client.prenom}}</td>
+                <td>{{iAVPF.iAV.client.telephone}}</td>
+                <td>{{iAVPF.iAV.client.adresse}}</td>
+                <td>{{iAVPF.formule.libelle}}</td>
+                <td>{{iAVPF.etatInscription.libelle}}</td>
+                <td>
+                    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="detail(iAVPF.id)" >
+                        Plus de détail
+                    </button>
+                    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="report(iAVPF.id)">
+                        Télécharger l'acte d'engagement 
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
