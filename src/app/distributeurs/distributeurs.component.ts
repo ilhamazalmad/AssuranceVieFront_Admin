@@ -13,7 +13,9 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class DistributeursComponent implements OnInit {
 
-  distributeurs!: DistributeurDto[];
+  distributeurs : Array<any> =[];
+  dists!: DistributeurDto[];
+  dist!: DistributeurDto;
   distributeur!: DistributeurDto;
   reference : any;libelle : any;
   constructor(private _service:ConnectionService,
@@ -25,7 +27,14 @@ export class DistributeursComponent implements OnInit {
     localStorage.setItem("page","distributeur")
       this._service.findAllDistributeur().subscribe(
         data => {
-          this.distributeurs=data
+          this.dists=data
+          this.dists.forEach(element => {
+            this.dist=element
+            if (this.dist.id !="1"){
+              this.distributeurs.push(this.dist);
+            }
+          });
+          
         }
       ) 
     
