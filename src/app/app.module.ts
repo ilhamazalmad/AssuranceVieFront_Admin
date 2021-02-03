@@ -17,6 +17,8 @@ import { Routes } from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 import { ClientsComponent } from './clients/clients.component';
 import { DistributeursComponent } from './distributeurs/distributeurs.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 
@@ -26,7 +28,8 @@ import { DistributeursComponent } from './distributeurs/distributeurs.component'
     HomeComponent,
     LoginComponent,
     ClientsComponent,
-    DistributeursComponent
+    DistributeursComponent,
+    DialogComponent
     ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { DistributeursComponent } from './distributeurs/distributeurs.component'
     FormsModule,
     MatIconModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
     ],
   providers: [],
   bootstrap: [AppComponent]

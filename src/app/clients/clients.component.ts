@@ -80,7 +80,7 @@ export class ClientsComponent implements OnInit {
   }
 
   delete(id:string){
-    if(confirm("Voulez-vous vraiment supprimer ce contrat définitivement??")){
+    if(confirm("Voulez-vous vraiment supprimer le client??")){
       this._service.deleteClient(id).subscribe() 
       window.location.reload();
     }

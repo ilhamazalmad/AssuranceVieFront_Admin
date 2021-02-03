@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Ajout d'un distributeur</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Reference :</mat-label>
+    <input matInput [(ngModel)]="data.reference">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Libelle :</mat-label>
+    <input matInput [(ngModel)]="data.libelle">
+  </mat-form-field>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Annuler</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ajouter</button>
+</div>

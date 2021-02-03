@@ -21,10 +21,8 @@ export class LoginComponent implements OnInit {
             alert("Connexion réussite :")
             localStorage.setItem("session","true");
             (document.getElementById('login') as HTMLElement).textContent="Deconnexion";
-            (document.getElementById('profil') as HTMLElement).hidden=false;
             (document.getElementById('clients') as HTMLElement).hidden=false;
             (document.getElementById('distributeurs') as HTMLElement).hidden=false;
-            (document.getElementById('profil') as HTMLElement).textContent="Administrateur";
             this._router.navigate(['/'])
           }
           else

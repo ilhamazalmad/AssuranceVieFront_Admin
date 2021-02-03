@@ -18,7 +18,6 @@ export class AppComponent{
         localStorage.setItem("session","false");
         localStorage.removeItem("page");
         (document.getElementById('login') as HTMLElement).textContent="Connexion";
-        (document.getElementById('profil') as HTMLElement).hidden=true;
         (document.getElementById('clients') as HTMLElement).hidden=true;
         (document.getElementById('distributeurs') as HTMLElement).hidden=true;
         this._router.navigate(['Login'])
@@ -26,21 +25,19 @@ export class AppComponent{
       }
       else if(localStorage.getItem("session") == "false"){
         (document.getElementById('login') as HTMLElement).textContent="Connexion";
-        (document.getElementById('profil') as HTMLElement).hidden=true;
         (document.getElementById('clients') as HTMLElement).hidden=true;
         (document.getElementById('distributeurs') as HTMLElement).hidden=true;
         this._router.navigate(['Login'])
       }
       else if(localStorage.getItem("session") == "true"){
         (document.getElementById('login') as HTMLElement).textContent="Deconnexion";
-        (document.getElementById('profil') as HTMLElement).hidden=false; 
         (document.getElementById('clients') as HTMLElement).hidden=false;
         (document.getElementById('distributeurs') as HTMLElement).hidden=false; 
         if(localStorage.getItem("page") == "client")  {
           this._router.navigate(['/Clients'])
         }    
         else if(localStorage.getItem("page") == "distributeur"){
-          this._router.navigate(['/Distributeur'])
+          this._router.navigate(['/Distributeurs'])
         }
         else{
           this._router.navigate(['/'])
@@ -60,7 +57,6 @@ export class AppComponent{
     connexion(){
         localStorage.setItem("session","false");
         (document.getElementById('login') as HTMLElement).textContent="Connexion";
-        (document.getElementById('profil') as HTMLElement).hidden=true;
         (document.getElementById('clients') as HTMLElement).hidden=true;
         (document.getElementById('distributeurs') as HTMLElement).hidden=true;
         

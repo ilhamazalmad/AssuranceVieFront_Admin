@@ -52,5 +52,9 @@ export class ConnectionService {
   public deleteIAVPF(id :String):Observable<any>{
     return this._http.delete("http://localhost:8090/assurance-api/IAVPF/delete/id/"+id);
   }
+  public saveDistributeur(distributeur:DistributeurDto):Observable<any>{
+    return this._http.post<ClientDto>("http://localhost:8090/assurance-api/Distributeur/save",distributeur);
+  }
+
 
 }

@@ -1,1 +1,45 @@
-<p>distributeurs works!</p>
+<div class="content" >
+    <h1 style="background-color: white;"> Liste des Distributeurs</h1>
+    <div style="background-color: white;">
+        <nav class="navbar" style="background-color: white;">
+       <!-- <div style="text-align: right;" >
+            <div><label>Reference</label></div>
+            <div><label>Libelle</label></div>
+
+        </div>
+        <div style="text-align: left;" >
+            <input class="form-control" type="text" name="reference" [(ngModel)]="reference" (ngModelChange)="chercher(1) " 
+            placeholder="reference_">
+            <input class="form-control" type="text" name="libelle" [(ngModel)]="libelle" (ngModelChange)="chercher(2)" 
+            placeholder="libelle_" >
+        </div><div>
+        <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="add()" >
+            Ajouter un distributeur
+        </button>
+        </div>-->
+    </nav>
+    <table class="table table-bordered" >
+        <thead>
+            <tr>
+                <th>Reference</th>
+                <th>Libelle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let distributeur of distributeurs">
+                <td>{{distributeur.reference}}</td>
+                <td>{{distributeur.libelle}}</td>
+                <td>
+                    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="delete(distributeur.id)" >
+                        Supprimer le distributeur
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button mat-raised-button color="primary" type="button" class="btn btn-primary" (click)="add()" >
+        Ajouter un distributeur
+    </button>
+    </div>
+</div>
